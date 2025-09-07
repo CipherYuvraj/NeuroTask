@@ -11,8 +11,11 @@ mongoose.connect("mongodb://localhost:27017/todoapp", {
 const todoSchema = mongoose.Schema({
     title:String,
     description:String,
-    completed: Boolean
-})  
+    completed:{ 
+    type:Boolean,
+    default:false
+    }
+});
 const todo = mongoose.model('todos',todoSchema);
 module.exports = {
     todo
